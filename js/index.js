@@ -25,7 +25,6 @@ donationNowBtnEl.addEventListener("click", function () {
 // History Button in JS
 const donationBtnEl = document.getElementById("donation-btn");
 const gridContainerEl = document.getElementById("grid-container");
-const historyContainer = document.getElementById("history-container");
 const historyBtnEl = document.getElementById("history-btn");
 // classList add and button hidden JS
 historyBtnEl.addEventListener("click", function () {
@@ -40,10 +39,12 @@ historyBtnEl.addEventListener("click", function () {
   historyItemsEl.className = "border rounded-md p-5 space-y-3";
   historyItemsEl.innerHTML = `
    <h1 class="text-xl font-semibold">
-      96500 Taka is Donated for famine-2024 at Feni, Bangladesh
+      ${donationFlood}Taka is Donated for famine-2024 at Feni, Bangladesh
    </h1>
    <p class="text-gray-500 text-xs"></p>
   `;
+  const historyContainer = document.getElementById("history-container");
+  historyContainer.insertBefore(historyItemsEl, historyContainer.firstChild);
 });
 
 // Dnation Button In JS
