@@ -4,9 +4,10 @@ donationNowBtnEl.addEventListener("click", function () {
   const donationFlood = parseFloat(
     document.getElementById("donation-flood").value
   );
-  //   if (donationFlood === null) {
-  //     return alert("input field is empty");
-  //   }
+  if (isNaN(donationFlood)) {
+    alert("input field is empty");
+    return;
+  }
   const floodBalanceEl = parseFloat(
     document.getElementById("flood-balance").innerText
   );
@@ -18,6 +19,7 @@ donationNowBtnEl.addEventListener("click", function () {
   );
   const totalBalance = totalBalanceEl - donationFlood;
   document.getElementById("total-balance").innerText = totalBalance;
+  window.location.re;
 });
 
 // History Button in JS
@@ -33,4 +35,26 @@ historyBtnEl.addEventListener("click", function () {
   donationBtnEl.classList.add("border");
   gridContainerEl.classList.add("hidden");
   historyContainer.classList.remove("hidden");
+  // History
+  const historyItemsEl = document.createElement("div");
+  historyItemsEl.className = "border rounded-md p-5 space-y-3";
+  historyItemsEl.innerHTML = `
+   <h1 class="text-xl font-semibold">
+      96500 Taka is Donated for famine-2024 at Feni, Bangladesh
+   </h1>
+   <p class="text-gray-500 text-xs"></p>
+  `;
 });
+
+// Dnation Button In JS
+donationBtnEl.addEventListener("click", function () {
+  historyContainer.classList.add("hidden");
+  gridContainerEl.classList.remove("hidden");
+  donationBtnEl.classList =
+    "bg-primary border p-2 text-xl font-semibold rounded-md";
+  historyBtnEl.classList.remove("bg-primary");
+});
+
+// Utilities Function in JS
+
+// document.getElementById('')
