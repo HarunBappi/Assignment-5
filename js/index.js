@@ -12,11 +12,7 @@ donateNowButtonEl.addEventListener("click", function () {
   // Select Input Field by Share Function
   const donationFlood = getInputFieldByValue("donation-flood");
   //   Condition Part
-  if (
-    isNaN(donationFlood) ||
-    mainBalance < donationFlood ||
-    donationFlood <= 0
-  ) {
+  if (mainBalance < donationFlood || donationFlood <= 0) {
     alert("wrong amount! Please try Again");
     return;
   }
@@ -39,7 +35,7 @@ donateNowButtonEl.addEventListener("click", function () {
   const historyContent = document.createElement("div");
   historyContent.className = "border rounded-md p-5 mb-3";
   historyContent.innerHTML = `
-  <h1 class="text-xl font-semibold">${donationFlood} Taka <span>${historyText}</span> </h1>
+  <h1 class="text-xl font-semibold">${donationFlood} Taka is <span>${historyText}</span> </h1>
   <p class="text-gray-500 text-xs">Date: ${new Date().toDateString()}
      <span>${new Date().toTimeString()}</span></p>
   `;
@@ -52,11 +48,7 @@ donateNowButtonEl2.addEventListener("click", function () {
   // Select Input Field by Share Function
   const donationFloodRelief = getInputFieldByValue("donatetion-flood-relief");
   //   Condition Part
-  if (
-    isNaN(donationFloodRelief) ||
-    mainBalance < donationFloodRelief ||
-    donationFloodRelief <= 0
-  ) {
+  if (mainBalance < donationFloodRelief || donationFloodRelief <= 0) {
     alert("wrong amount! Please try Again");
     return;
   }
@@ -79,7 +71,7 @@ donateNowButtonEl2.addEventListener("click", function () {
   const historyContent = document.createElement("div");
   historyContent.className = "border rounded-md p-5 mb-3";
   historyContent.innerHTML = `
-    <h1 class="text-xl font-semibold">${donationFloodRelief} Taka <span>${historyText2}</span> </h1>
+    <h1 class="text-xl font-semibold">${donationFloodRelief} Taka is <span>${historyText2}</span> </h1>
     <p class="text-gray-500 text-xs">Date: ${new Date().toDateString()}
        <span>${new Date().toTimeString()}</span></p>
     `;
@@ -91,11 +83,7 @@ donateNowButtonEl3.addEventListener("click", function () {
   // Select Input Field by Share Function
   const donationQuotaInjurd = getInputFieldByValue("donation-quota-injured");
   //   Condition Part
-  if (
-    isNaN(donationQuotaInjurd) ||
-    mainBalance < donationQuotaInjurd ||
-    donationQuotaInjurd <= 0
-  ) {
+  if (mainBalance < donationQuotaInjurd || donationQuotaInjurd <= 0) {
     alert("wrong amount! Please try Again");
     return;
   }
@@ -119,7 +107,7 @@ donateNowButtonEl3.addEventListener("click", function () {
   const historyContent = document.createElement("div");
   historyContent.className = "border rounded-md p-5 mb-3";
   historyContent.innerHTML = `
-     <h1 class="text-xl font-semibold">${donationQuotaInjurd} Taka <span>${historyText3}</span> </h1>
+     <h1 class="text-xl font-semibold">${donationQuotaInjurd} Taka is <span>${historyText3}</span> </h1>
      <p class="text-gray-500 text-xs">Date: ${new Date().toDateString()}
         <span>${new Date().toTimeString()}</span></p>
      `;
