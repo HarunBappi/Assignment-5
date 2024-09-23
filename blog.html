@@ -1,50 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
-        <!-- Daisy UI & Tailwind CDN -->
-        <link
-        href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
-        rel="stylesheet"
-        type="text/css"
-      />
-      <script src="https://cdn.tailwindcss.com"></script>
-      <!-- Google Font -LEXEND -->
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
-        rel="stylesheet"
-      />
-      <!-- Font Awesome CDN -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <!-- Tailwind Custome CSS -->
-      <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                navbg: "rgb(249, 247, 243)",
-                primary: "rgb(180, 244, 97)",
-                secondary: "rgba(17, 17, 17, 0.05)",
-              },
-              fontFamily: {
-                lexend: "Lexend",
-              },
+    <!-- Daisy UI & Tailwind CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font -LEXEND -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Tailwind Custome CSS -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navbg: "rgb(249, 247, 243)",
+              primary: "rgb(180, 244, 97)",
+              secondary: "rgba(17, 17, 17, 0.05)",
+            },
+            fontFamily: {
+              lexend: "Lexend",
             },
           },
-        };
-      </script>
-</head>
-<body class="font-lexend">
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend">
     <header>
       <!-- Nav Section Strat -->
       <section class="bg-navbg">
         <div class="navbar lg:w-3/4 lg:mx-auto">
           <div class="navbar-start">
-            <a class="btn btn-ghost text-xl bg-primary hover:bg-primary" href="./index.html">Home</a>
+            <button
+              id="home-btn"
+              class="btn btn-ghost text-xl bg-primary hover:bg-primary"
+            >
+              Home
+            </button>
           </div>
           <div class="navbar-center">
             <div class="flex items-center font-semibold gap-4">
@@ -62,40 +73,62 @@
       </section>
     </header>
     <main class="w-5/6 mx-auto mt-12">
-      <h1 class="text-3xl font-semibold">Important FAQ <span>
-        <i class="fa-regular fa-circle-question"></i></span></h1>
-        <div class="border p-5 rounded-md mt-12">
-          <div class="collapse collapse-arrow">
-            <input type="radio" name="my-accordion-2"  />
-            <div class="collapse-title lg:text-xl font-medium">What is the Document Object Model (DOM)?</div>
-            <div class="collapse-content">
-              <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content.</p>
-            </div>
-          </div>
-          <div class="collapse collapse-arrow">
-            <input type="radio" name="my-accordion-2" />
-            <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
-            <div class="collapse-content">
-              <p>An element can be selected from the Dom in several ways. For example : document.getElementById('idName'), document.getElementsByClassName('className'), document.getElementsByTagName('tagName'),document.querySelector('specific ClassName') and document.querySelectorAll();</p>
-            </div>
-          </div>
-          <div class="collapse collapse-arrow">
-            <input type="radio" name="my-accordion-2" />
-            <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
-            <div class="collapse-content">
-              <p>Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.</p>
-            </div>
-          </div>
-          <div class="collapse collapse-arrow">
-            <input type="radio" name="my-accordion-2" />
-            <div class="collapse-title lg:text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
-            <div class="collapse-content">
-              <p>To manipulate an element's attributes and styles using the DOM, you can: Change the style of an HTML element using document.getElementById('idName').style.property = new style. Create, append, remove and add attributes to, and add event listeners to elements using JavaScript DOM manipulation methods</p>
-            </div>
-          </div>
-          </div>
+      <h1 class="text-3xl font-semibold">
+        Important FAQ
+        <span> <i class="fa-regular fa-circle-question"></i></span>
+      </h1>
+      <div class="mt-12 space-y-5">
+        <div class="border p-3 rounded-md space-y-3">
+          <h1 class="text-xl font-medium">
+            What is the Document Object Model (DOM)?
+          </h1>
+          <p class="lg:text-base text-xs text-gray-500">
+            The Document Object Model (DOM) is a programming interface for web
+            documents. It represents the page so that programs can change the
+            document structure, style, and content.
+          </p>
         </div>
+        <div class="border p-3 rounded-md space-y-3">
+          <h1 class="text-xl font-medium">
+            How do you select an element from the DOM?
+          </h1>
+          <p class="lg:text-base text-xs text-gray-500">
+            An element can be selected from the Dom in several ways. For example
+            : document.getElementById('idName'),
+            document.getElementsByClassName('className'),
+            document.getElementsByTagName('tagName'),
+            document.querySelector('specific ClassName') and
+            document.querySelectorAll();
+          </p>
+        </div>
+        <div class="border p-3 rounded-md space-y-3">
+          <h1 class="text-xl font-medium">
+            What is event delegation in the context of the DOM, and why is it
+            useful?
+          </h1>
+          <p class="lg:text-base text-xs text-gray-500">
+            Event Delegation is basically a pattern to handle events
+            efficiently. Instead of adding an event listener to each and every
+            similar element, we can add an event listener to a parent element
+            and call an event on a particular target using the .target property
+            of the event object.
+          </p>
+        </div>
+        <div class="border p-3 rounded-md space-y-3">
+          <h1 class="text-xl font-medium">
+            How do you manipulate an element's attributes and styles using the
+            DOM?
+          </h1>
+          <p class="lg:text-base text-xs text-gray-500">
+            To manipulate an element's attributes and styles using the DOM, you
+            can: Change the style of an HTML element using
+            document.getElementById('idName').style.property = new style.
+            Create, append, remove and add attributes to, and add event
+            listeners to elements using JavaScript DOM manipulation methods
+          </p>
+        </div>
+      </div>
     </main>
-    
-</body>
+    <script src="./js/toggle.js"></script>
+  </body>
 </html>
