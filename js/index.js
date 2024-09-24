@@ -153,5 +153,5 @@ donationBtnEl.addEventListener("click", function () {
 });
 // Blog Button
 document.getElementById("blog-btn").addEventListener("click", function () {
-  window.location.href = "../blog.html";
+  window.location.href = "https://harunbappi.github.io/Assignment-5/blog.html";
 });
