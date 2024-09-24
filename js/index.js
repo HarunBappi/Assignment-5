@@ -7,20 +7,18 @@ const historyText = document.getElementById("flood-noakhali-text").innerText;
 const historyText2 = document.getElementById("flood-relief-text").innerText;
 const historyText3 = document.getElementById("injured-quota-text").innerText;
 // Donate For Flood Button in JS
-const donateNowButtonEl = document.getElementById("donation-now-btn");
-donateNowButtonEl.addEventListener("click", function () {
+getDonateNowButton("donation-now-btn").addEventListener("click", function () {
   // Select Input Field by Share Function
   const donationFlood = getInputFieldByValue("donation-flood");
   //   Condition Part
   if (mainBalance < donationFlood || donationFlood <= 0) {
-    alert("You do not have sufficient Balance");
-    return;
-  }
-  if (isNaN(donationFlood)) {
     alert("wrong amount! Please try Again");
     return;
   }
-
+  if (isNaN(donationFlood)) {
+    alert("field is empty! please try again");
+    return;
+  }
   //   Add Donation Amount
   const floodBalanceEl = parseFloat(
     document.getElementById("flood-balance").innerText
@@ -28,18 +26,14 @@ donateNowButtonEl.addEventListener("click", function () {
   const floodBalance = donationFlood + floodBalanceEl;
   document.getElementById("flood-balance").innerText = floodBalance.toFixed(2);
   //   Decrease Main balance
-
   const totalBalance1 = mainBalance - floodBalance;
   document.getElementById("main-balance").innerText = totalBalance1.toFixed(2);
-
   //   Open Modal
-
   const myModal = document.getElementById("my_modal_5");
   const donationBalance1 = document.getElementById("donation-balance-1");
   donationBalance1.innerHTML = `${donationFlood.toFixed(2)} BDT`;
   myModal.classList.remove("hidden");
   document.getElementById("my_modal_5").showModal();
-
   //   Donation History
   const historyContent = document.createElement("div");
   historyContent.className = "border rounded-md p-5 mb-3";
@@ -50,19 +44,17 @@ donateNowButtonEl.addEventListener("click", function () {
   `;
   historyContainer.appendChild(historyContent);
 });
-//
 // Donation relief Button
-const donateNowButtonEl2 = document.getElementById("donation-now-btn-2");
-donateNowButtonEl2.addEventListener("click", function () {
+getDonateNowButton("donation-now-btn-2").addEventListener("click", function () {
   // Select Input Field by Share Function
   const donationFloodRelief = getInputFieldByValue("donatetion-flood-relief");
   //   Condition Part
   if (mainBalance < donationFloodRelief || donationFloodRelief <= 0) {
-    alert("You do not have sufficient Balance");
+    alert("wrong amount! Please try Again");
     return;
   }
   if (isNaN(donationFloodRelief)) {
-    alert("wrong amount! Please try Again");
+    alert("field is empty! Please try Again");
     return;
   }
   //   Relief Balance Declare
@@ -92,17 +84,16 @@ donateNowButtonEl2.addEventListener("click", function () {
   historyContainer.appendChild(historyContent);
 });
 // Injured Quota Button
-const donateNowButtonEl3 = document.getElementById("donation-now-btn-3");
-donateNowButtonEl3.addEventListener("click", function () {
+getDonateNowButton("donation-now-btn-3").addEventListener("click", function () {
   // Select Input Field by Share Function
   const donationQuotaInjurd = getInputFieldByValue("donation-quota-injured");
   //   Condition Part
   if (mainBalance < donationQuotaInjurd || donationQuotaInjurd <= 0) {
-    alert("You do not have sufficient Balance");
+    alert("wrong amount! Please try Again");
     return;
   }
   if (isNaN(donationQuotaInjurd)) {
-    alert("wrong amount! Please try Again");
+    alert("field is empty! Please try Again");
     return;
   }
   //   donation-quota-injured Declare
@@ -132,7 +123,6 @@ donateNowButtonEl3.addEventListener("click", function () {
      `;
   historyContainer.appendChild(historyContent);
 });
-
 // History Button
 const historyBtnEl = document.getElementById("history-btn");
 const donationBtnEl = document.getElementById("donation-btn");
@@ -143,18 +133,14 @@ historyBtnEl.addEventListener("click", function () {
   donationBtnEl.classList.remove("bg-primary");
   donationBtnEl.classList.add("border");
 });
-
 // Donation Button
-
 donationBtnEl.addEventListener("click", function () {
   gridContainerEl.classList.remove("hidden");
   historyContainer.classList.add("hidden");
   historyBtnEl.classList.remove("bg-primary");
   donationBtnEl.classList.add("bg-primary");
 });
-
 // Blog Button
 document.getElementById("blog-btn").addEventListener("click", function () {
   window.location.href = "../blog.html";
 });
-// Home Button
