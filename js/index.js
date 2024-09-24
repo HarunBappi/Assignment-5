@@ -29,11 +29,11 @@ getDonateNowButton("donation-now-btn").addEventListener("click", function () {
   const totalBalance1 = mainBalance - floodBalance;
   document.getElementById("main-balance").innerText = totalBalance1.toFixed(2);
   //   Open Modal
-  const myModal = document.getElementById("my_modal_5");
+  const myModal = document.getElementById("my_modal_1");
   const donationBalance1 = document.getElementById("donation-balance-1");
   donationBalance1.innerHTML = `${donationFlood.toFixed(2)} BDT`;
   myModal.classList.remove("hidden");
-  document.getElementById("my_modal_5").showModal();
+  document.getElementById("my_modal_1").showModal();
   //   Donation History
   const historyContent = document.createElement("div");
   historyContent.className = "border rounded-md p-5 mb-3";
@@ -63,16 +63,17 @@ getDonateNowButton("donation-now-btn-2").addEventListener("click", function () {
   );
   //   Add Donation Amount
   const reliefBalance = donationFloodRelief + reliefBalanceEl;
-  document.getElementById("relief-balance").innerText = reliefBalance;
+  document.getElementById("relief-balance").innerText =
+    reliefBalance.toFixed(2);
   //   Decrease Main balance
   const totalBalance2 = mainBalance - reliefBalance;
-  document.getElementById("main-balance").innerText = totalBalance2;
+  document.getElementById("main-balance").innerText = totalBalance2.toFixed(2);
   //   Open Modal
   const myModal = document.getElementById("my_modal_2");
   const donationBalance2 = document.getElementById("donation-balance-2");
   donationBalance2.innerHTML = `${donationFloodRelief.toFixed(2)} BDT`;
   myModal.classList.remove("hidden");
-  document.getElementById("my_modal_5").showModal();
+  document.getElementById("my_modal_2").showModal();
   //   Donation History
   const historyContent = document.createElement("div");
   historyContent.className = "border rounded-md p-5 mb-3";
@@ -103,7 +104,7 @@ getDonateNowButton("donation-now-btn-3").addEventListener("click", function () {
   //   Add Donation Amount
   const injuredQuotaBalance = donationQuotaInjurd + injuredQuotaBalanceEl;
   document.getElementById("injured-quota-balance").innerText =
-    injuredQuotaBalance;
+    injuredQuotaBalance.toFixed(2);
   //   Decrease Main balance
   const totalBalance3 = mainBalance - injuredQuotaBalance;
   document.getElementById("main-balance").innerText = totalBalance3.toFixed(2);
@@ -112,7 +113,7 @@ getDonateNowButton("donation-now-btn-3").addEventListener("click", function () {
   const donationBalance3 = document.getElementById("donation-balance-3");
   donationBalance3.innerHTML = `${donationQuotaInjurd.toFixed(2)} BDT`;
   myModal.classList.remove("hidden");
-  document.getElementById("my_modal_5").showModal();
+  document.getElementById("my_modal_3").showModal();
   //   Donation History
   const historyContent = document.createElement("div");
   historyContent.className = "border rounded-md p-5 mb-3";
