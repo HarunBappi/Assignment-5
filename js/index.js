@@ -1,7 +1,5 @@
 // Global Veriable Declare
 const gridContainerEl = document.getElementById("grid-container");
-const mainBalance = getInputTextByValue("main-balance");
-// global Veriable Declare of part History
 const historyContainer = document.getElementById("history-container");
 const historyText = document.getElementById("flood-noakhali-text").innerText;
 const historyText2 = document.getElementById("flood-relief-text").innerText;
@@ -10,8 +8,12 @@ const historyText3 = document.getElementById("injured-quota-text").innerText;
 getDonateNowButton("donation-now-btn").addEventListener("click", function () {
   // Select Input Field by Share Function
   const donationFlood = getInputFieldByValue("donation-flood");
+  const mainBalance = getInputTextByValue("main-balance");
   //   Condition Part
-  if (mainBalance < donationFlood || donationFlood <= 0) {
+  if (donationFlood > mainBalance) {
+    return alert("Insufficient banlance! Please try Again");
+  }
+  if (donationFlood <= 0) {
     alert("wrong amount! Please try Again");
     return;
   }
@@ -26,7 +28,7 @@ getDonateNowButton("donation-now-btn").addEventListener("click", function () {
   const floodBalance = donationFlood + floodBalanceEl;
   document.getElementById("flood-balance").innerText = floodBalance.toFixed(2);
   //   Decrease Main balance
-  const totalBalance1 = mainBalance - floodBalance;
+  const totalBalance1 = mainBalance - donationFlood;
   document.getElementById("main-balance").innerText = totalBalance1.toFixed(2);
   //   Open Modal
   const myModal = document.getElementById("my_modal_1");
@@ -39,7 +41,7 @@ getDonateNowButton("donation-now-btn").addEventListener("click", function () {
   historyContent.className = "border rounded-md p-5 mb-3";
   historyContent.innerHTML = `
   <h1 class="text-xl font-semibold">${donationFlood} Taka is <span>${historyText}</span> </h1>
-  <p class="text-gray-500 text-xs">Date: ${new Date().toDateString()}
+  <p class="text-gray-500 text-xs mt-2">Date: ${new Date().toDateString()}
      <span>${new Date().toTimeString()}</span></p>
   `;
   historyContainer.appendChild(historyContent);
@@ -48,8 +50,12 @@ getDonateNowButton("donation-now-btn").addEventListener("click", function () {
 getDonateNowButton("donation-now-btn-2").addEventListener("click", function () {
   // Select Input Field by Share Function
   const donationFloodRelief = getInputFieldByValue("donatetion-flood-relief");
+  const mainBalance = getInputTextByValue("main-balance");
   //   Condition Part
-  if (mainBalance < donationFloodRelief || donationFloodRelief <= 0) {
+  if (donationFloodRelief > mainBalance) {
+    return alert("Insufficient banlance! Please try Again");
+  }
+  if (donationFloodRelief <= 0) {
     alert("wrong amount! Please try Again");
     return;
   }
@@ -66,7 +72,7 @@ getDonateNowButton("donation-now-btn-2").addEventListener("click", function () {
   document.getElementById("relief-balance").innerText =
     reliefBalance.toFixed(2);
   //   Decrease Main balance
-  const totalBalance2 = mainBalance - reliefBalance;
+  const totalBalance2 = mainBalance - donationFloodRelief;
   document.getElementById("main-balance").innerText = totalBalance2.toFixed(2);
   //   Open Modal
   const myModal = document.getElementById("my_modal_2");
@@ -88,8 +94,12 @@ getDonateNowButton("donation-now-btn-2").addEventListener("click", function () {
 getDonateNowButton("donation-now-btn-3").addEventListener("click", function () {
   // Select Input Field by Share Function
   const donationQuotaInjurd = getInputFieldByValue("donation-quota-injured");
+  const mainBalance = getInputTextByValue("main-balance");
   //   Condition Part
-  if (mainBalance < donationQuotaInjurd || donationQuotaInjurd <= 0) {
+  if (donationQuotaInjurd > mainBalance) {
+    return alert("Insufficient banlance! Please try Again");
+  }
+  if (donationQuotaInjurd <= 0) {
     alert("wrong amount! Please try Again");
     return;
   }
@@ -106,7 +116,7 @@ getDonateNowButton("donation-now-btn-3").addEventListener("click", function () {
   document.getElementById("injured-quota-balance").innerText =
     injuredQuotaBalance.toFixed(2);
   //   Decrease Main balance
-  const totalBalance3 = mainBalance - injuredQuotaBalance;
+  const totalBalance3 = mainBalance - donationQuotaInjurd;
   document.getElementById("main-balance").innerText = totalBalance3.toFixed(2);
   //   Open Modal
   const myModal = document.getElementById("my_modal_3");
